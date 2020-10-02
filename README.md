@@ -13,3 +13,11 @@ I'm using my stream chat credentials (key and secret) in the .env file in the ro
 6. Run 'node server.js' from the project root to start the Node server on port 5500.
 7. Run 'ng serve' from the project root to start the Angular app server.
 8. View the app by using http://localhost:4200 in your browser.
+
+# Docker file for ease of deployment
+I have created the below docker repository which is connected to my github repository:
+https://hub.docker.com/repository/docker/deepjandoria/letschatspa_docker
+
+Also, I can install Watchtower on my server which will pull the running docker images and checks for updates. If there are any updates, it will shut down the original container and create a container from the new image with the same settings.
+
+So, now if I push a commit to my GitHub repository, Docker hub will automatically build a Docker image and this image gets pulled by WatchTower and it will run with all original options. In this way, I can automatically deploy my pushed commit (on github) to the server.
